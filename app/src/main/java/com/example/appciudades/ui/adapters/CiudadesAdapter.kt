@@ -31,6 +31,12 @@ class CiudadesAdapter(private val listener: MyClick
 
     override fun onBindViewHolder(holder: CiudadesHolder, position: Int) {
         val ciudad = listado[position]
+
+        holder.binding.nombreCiudad.text = ciudad.nombre
+
+        holder.itemView.setOnClickListener {
+            listener.onCiudadClick(ciudad)
+        }
     }
 
     fun updateList(contactos: List<Ciudades>) {

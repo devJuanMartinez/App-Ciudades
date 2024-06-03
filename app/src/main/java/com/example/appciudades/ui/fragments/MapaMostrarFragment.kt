@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.appciudades.R
 import com.example.appciudades.databinding.MapaanidirBinding
 import com.example.appciudades.databinding.MapamostrarLayoutBinding
@@ -13,6 +14,8 @@ import com.example.appciudades.ui.MyViewModel
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 class MapaMostrarFragment : Fragment(), OnMapReadyCallback {
 
@@ -37,6 +40,21 @@ class MapaMostrarFragment : Fragment(), OnMapReadyCallback {
 
         val mapFragment = (childFragmentManager.findFragmentById(R.id.map)) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        binding.floatingActionButton.setOnClickListener {
+            findNavController().navigate(R.id.action_mapaMostrarFragment_to_mapaAniadirFragment)
+        }
+
+        viewModel.getCiudades().observe(viewLifecycleOwner){
+            it.forEach {ciudad ->
+                val options = MarkerOptions()
+                    .position(LatLng(ciudad.latitud, ciudad.longitud))
+                    .title(ciudad.nombre)
+
+                val marker = mapa.addMarker(options)
+
+            }
+        }
     }
 
     override fun onMapReady(map: GoogleMap) {

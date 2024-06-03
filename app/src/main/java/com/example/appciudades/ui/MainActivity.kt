@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.bottomNavigationView
         val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.mapaFragment,
+            R.id.mapaMostrarFragment,
             R.id.ciudadesGuardadasFragment
         )
         )

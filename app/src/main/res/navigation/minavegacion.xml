@@ -2,14 +2,30 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/minavegacion"
-    app:startDestination="@id/mapaFragment">
+    app:startDestination="@id/mapaMostrarFragment">
 
-    <fragment
-        android:id="@+id/mapaFragment"
-        android:name="com.example.appciudades.ui.fragments.MapaAniadirFragment"
-        android:label="MapaFragment" />
     <fragment
         android:id="@+id/ciudadesGuardadasFragment"
         android:name="com.example.appciudades.ui.fragments.CiudadesGuardadasFragment"
-        android:label="CiudadesGuardadasFragment" />
+        android:label="CiudadesGuardadasFragment" >
+        <action
+            android:id="@+id/action_ciudadesGuardadasFragment_to_detailCiudadFragmnet"
+            app:destination="@id/detailCiudadFragmnet" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapaMostrarFragment"
+        android:name="com.example.appciudades.ui.fragments.MapaMostrarFragment"
+        android:label="MapaMostrarFragment" >
+        <action
+            android:id="@+id/action_mapaMostrarFragment_to_mapaAniadirFragment"
+            app:destination="@id/mapaAniadirFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapaAniadirFragment"
+        android:name="com.example.appciudades.ui.fragments.MapaAniadirFragment"
+        android:label="MapaAniadirFragment" />
+    <fragment
+        android:id="@+id/detailCiudadFragmnet"
+        android:name="com.example.appciudades.ui.fragments.DetailCiudadFragmnet"
+        android:label="DetailCiudadFragmnet" />
 </navigation>

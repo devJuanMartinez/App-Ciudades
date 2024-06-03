@@ -1,6 +1,7 @@
 package com.example.appciudades.ui
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -39,4 +40,6 @@ class MyViewModel(val context: Context): ViewModel() {
     fun getCiudad(ciudad: Ciudades) {
         ciudadSeleccionada.value = ciudad
     }
+
+    fun getCiudades() = repositorio.getCiudades()
 }

@@ -12,6 +12,8 @@ class Repositorio(context: Context) {
 
     val allCiudades: LiveData<List<Ciudades>> = ciudadesDao.getAllCiudades()
 
+    fun getCiudades() = ciudadesDao.getAllCiudades()
+
     suspend fun insertaCiudad(ciudad: Ciudades) {
         ciudadesDao.insertaCiudad(ciudad)
     }
@@ -19,4 +21,6 @@ class Repositorio(context: Context) {
     suspend fun eliminaCiudad(ciudad: Ciudades) {
         ciudadesDao.eliminaCiudad(ciudad)
     }
+
+
 }

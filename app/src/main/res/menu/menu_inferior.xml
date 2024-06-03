@@ -5,6 +5,6 @@
         android:id="@+id/ciudadesGuardadasFragment"
         android:title="Ciudades" />
     <item
-        android:id="@+id/mapaFragment"
-        android:title="Mapa" />
+        android:id="@+id/mapaMostrarFragment"
+        android:title="Item" />
 </menu>

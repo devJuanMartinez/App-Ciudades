@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/minavegacion"
+    app:startDestination="@id/mapaFragment">
+
+    <fragment
+        android:id="@+id/mapaFragment"
+        android:name="com.example.appciudades.ui.fragments.MapaAniadirFragment"
+        android:label="MapaFragment" />
+    <fragment
+        android:id="@+id/ciudadesGuardadasFragment"
+        android:name="com.example.appciudades.ui.fragments.CiudadesGuardadasFragment"
+        android:label="CiudadesGuardadasFragment" />
+</navigation>
